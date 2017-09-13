@@ -11,29 +11,29 @@
     * this不能指向全局变量
 
 ## js实现继承 
-    * 原型链继承  
-    function Parent() {}
-    function Child() {}
-    Child.prototype = new Parent()  缺点：子类区别于父类的属性和方法要在Sub.prototype = new Base();这样的语句之后分别执行，无法被包装到Sub这个构造器里面去；优点：实例既是父类的实例又是子类的实例
-    * 原型继承
-    Child.prototype = Parent.prototype
-    Child.prototype.constructor = Child 缺点：在子类原型对象中拓展一些属性的话，父类原型对象也会被修改
-    * 实例继承
-    var Base = function()  
-        {  
-            this.level = 1;  
-            this.name = "base";  
-            this.toString = function(){  
-                return "base";  
-            };  
-        };  
-    Base.CONSTANT = "constant";  
-    var Sub = function()  
+* 原型链继承  
+function Parent() {}
+function Child() {}
+Child.prototype = new Parent()  缺点：子类区别于父类的属性和方法要在Sub.prototype = new Base();这样的语句之后分别执行，无法被包装到Sub这个构造器里面去；优点：实例既是父类的实例又是子类的实例
+* 原型继承
+Child.prototype = Parent.prototype
+Child.prototype.constructor = Child 缺点：在子类原型对象中拓展一些属性的话，父类原型对象也会被修改
+* 实例继承
+var Base = function()  
     {  
-        var instance = new Base();  
-        instance.name = "sub";  
-        return instance;  
-    };
+        this.level = 1;  
+        this.name = "base";  
+        this.toString = function(){  
+            return "base";  
+        };  
+    };  
+Base.CONSTANT = "constant";  
+var Sub = function()  
+{  
+    var instance = new Base();  
+    instance.name = "sub";  
+    return instance;  
+};
 
 ## 深拷贝
     function clone(src) {
@@ -60,6 +60,21 @@
      
     };
 
+## promise
+    promise的三个阶段：Fulfilled（成功），Rejected（失败），Pending（创建阶段）
+
+## call,apply,bind的异同点，不支持bind的情况下如何写polyfill    
+
+## Event loop
+    
+## 跨域解决方案
+
+## jsonp实现原理
+
+# ES6
+
+## 箭头函数的优点
+    this指针的指向问题
 # CSS总结
 ## flex与传统布局的差异 
     传统的布局是基于css盒模型，依赖display＋position＋float等属性
@@ -71,6 +86,8 @@
     rotate(): 旋转角度
     scale(): 放大缩小
     matrix(): 所有的2D转换方法集合，包含数学函数，允许您：旋转、缩放、移动以及倾斜元素   
+
+## 不定宽高元素的垂直水平居中
 
 # HTML 
 ## cookie,seesionStorage,LocalStorage区别
@@ -103,8 +120,6 @@
     * componentWillReceiveProps ---> shouldComponentUpdate ----> componentWillUpdate ----> render -----> componentDidUpdate
     * componentWillUnmount
 
-## promise
-promise的三个阶段：Fulfilled（成功），Rejected（失败），Pending（创建阶段）
 # VUE 总结
 ## 生命周期
     beforecreate（初始化事件）---> created（完成数据观测，属性和方法的计算，watch／event事件回调）---> beforeMounted（render首次被调用）---> mounted (el被创建的vm.$el替换，并挂载到实例上去后调用，并不会保证所有子组件都会被挂载，如果希望整个视图都渲染完毕，可以使用vm.$nextTick替换mounted)---> beforeUpdate(数据更新时调用，发生在虚拟dom重新渲染和打补丁之前，可以在这个钩子函数中进一步更改状态，不会触发附加的重渲染过程) ---> updated（由于数据更改导致的虚拟dom重新渲染，会调用该函数，当这个函数被调用时，组件dom已经更新，所以可以执行依赖于dom的操作。在大多数情况下应该避免在此期间更改状态，可以通过计算属性和watcher取代）---> activated（keep－alive激活时调用）---> deactivate（keep－alive组件停用时调用）---> beforeDestroy（实例销毁之前调用，在这一步，实例仍然完全可用）---> destroyed（实例销毁之后调用，调用后，vue实例所指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁）
@@ -178,3 +193,28 @@ promise的三个阶段：Fulfilled（成功），Rejected（失败），Pending�
     2.直接改变className，如果动态改变样式，则使用cssText
 
 
+# js编程题目
+## 数组随机顺序排序
+## 深拷贝
+## 对象继承
+
+## 数组加逗号间隔符
+
+## 有序数组合并
+
+# 面向对象编程思想
+## 重载和多态
+
+
+# 前端开发工具
+## 对webpack grunt gulp工作原理的理解
+
+
+# HTTP 
+
+## 网络状态码
+
+# jQuery
+## 原生实现Ajax请求
+
+## jQuery自定义拓展
