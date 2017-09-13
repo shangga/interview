@@ -71,6 +71,13 @@
     rotate(): 旋转角度
     scale(): 放大缩小
     matrix(): 所有的2D转换方法集合，包含数学函数，允许您：旋转、缩放、移动以及倾斜元素   
+
+# HTML 
+## cookie,seesionStorage,LocalStorage区别
+    cookie：默认是关闭浏览器后失效，由服务器生成，可设置失效时间（_cookie的清除：手动设置cookie的键值对后面的expires为当前时间_）
+    localStorage：只能手动删除数据，数据大小为5M
+    sessionStroage：只在当前页面有效，关闭页面或者浏览器时失效
+
 # 浏览器
 ## 304实现原理
     浏览器跟服务器之间过了一次确认资源时效的请求，协商缓存
@@ -114,7 +121,8 @@ promise的三个阶段：Fulfilled（成功），Rejected（失败），Pending�
 
 ## vue引入组件的步骤
     1.采用ES6 import方法引入组件，或者使用commomjs的方法require
-    2.注册组件；3.使用组件
+    2.注册组件；
+    3.使用组件
 
 ## method computed watcher
     method无论何时都会执行，computed只在依赖的数据发生变化时才会执行，watcher类似
@@ -159,11 +167,14 @@ promise的三个阶段：Fulfilled（成功），Rejected（失败），Pending�
 ## webpack配置
 
 ## 浏览器渲染
-1.  浏览器把获取到的HTML代码解析成1个DOM树，HTML中的每个tag都是DOM树中的1个节点，根节点就是我们常用的document对象。DOM树里包含了所有HTML标签，包括display:none隐藏，还有用JS动态添加的元素等。
+1. 浏览器把获取到的HTML代码解析成1个DOM树，HTML中的每个tag都是DOM树中的1个节点，根节点就是我们常用的document对象。DOM树里包含了所有HTML标签，包括display:none隐藏，还有用JS动态添加的元素等。
 2. 浏览器把所有样式(用户定义的CSS和用户代理)解析成样式结构体，在解析的过程中会去掉浏览器不能识别的样式，比如IE会去掉-moz开头的样式，而FF会去掉_开头的样式。
-3、DOM Tree 和样式结构体组合后构建render tree, render tree类似于DOM tree，但区别很大，render tree能识别样式，render tree中每个NODE都有自己的style，而且 render tree不包含隐藏的节点 (比如display:none的节点，还有head节点)，因为这些节点不会用于呈现，而且不会影响呈现的，所以就不会包含到 render tree中。注意 visibility:hidden隐藏的元素还是会包含到 render tree中的，因为visibility:hidden 会影响布局(layout)，会占有空间。根据CSS2的标准，render tree中的每个节点都称为Box (Box dimensions)，理解页面元素为一个具有填充、边距、边框和位置的盒子。
+3. DOM Tree 和样式结构体组合后构建render tree, render tree类似于DOM tree，但区别很大，render tree能识别样式，render tree中每个NODE都有自己的style，而且 render tree不包含隐藏的节点 (比如display:none的节点，还有head节点)，因为这些节点不会用于呈现，而且不会影响呈现的，所以就不会包含到 render tree中。注意 visibility:hidden隐藏的元素还是会包含到 render tree中的，因为visibility:hidden 会影响布局(layout)，会占有空间。根据CSS2的标准，render tree中的每个节点都称为Box (Box dimensions)，理解页面元素为一个具有填充、边距、边框和位置的盒子。
 4. 一旦render tree构建完毕后，浏览器就可以根据render tree来绘制页面了。
-回流和重绘：当render tree中的一部分(或全部)因为元素的规模尺寸，布局，隐藏等改变而需要重新构建。这就称为回流(reflow)。每个页面至少需要一次回流，就是在页面第一次加载的时候。在回流的时候，浏览器会使渲染树中受到影响的部分失效，并重新构造这部分渲染树，完成回流后，浏览器会重新绘制受影响的部分到屏幕中，该过程成为重绘（repaint）。浏览器为了减少重绘和回流会维护一个队列，将重绘和回流合并，但是某些属性会强制浏览器flush队列，1. offsetTop, offsetLeft, offsetWidth, offsetHeight2. scrollTop/Left/Width/Height3. clientTop/Left/Width/Height4. width,height5. 请求了getComputedStyle(), 或者 IE的 currentStyle
-提高渲染效率的方法：1.减少访问会引起浏览器flush队列的属性，如果你确实要访问，利用缓存，就是存储为一个变量；2.直接改变className，如果动态改变样式，则使用cssText
+## 回流(reflow)和重绘(repaint)：
+    当render tree中的一部分(或全部)因为元素的规模尺寸，布局，隐藏等改变而需要重新构建。这就称为回流(reflow)。每个页面至少需要一次回流，就是在页面第一次加载的时候。在回流的时候，浏览器会使渲染树中受到影响的部分失效，并重新构造这部分渲染树，完成回流后，浏览器会重新绘制受影响的部分到屏幕中，该过程成为重绘（repaint）。浏览器为了减少重绘和回流会维护一个队列，将重绘和回流合并，但是某些属性会强制浏览器flush队列，1. offsetTop, offsetLeft, offsetWidth, offsetHeight2. scrollTop/Left/Width/Height3. clientTop/Left/Width/Height4. width,height5. 请求了getComputedStyle(), 或者 IE的 currentStyle
+## 提高渲染效率的方法：
+    1.减少访问会引起浏览器flush队列的属性，如果你确实要访问，利用缓存，就是存储为一个变量；
+    2.直接改变className，如果动态改变样式，则使用cssText
 
 
