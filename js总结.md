@@ -1,3 +1,7 @@
+[TOC]
+
+
+
 # JS总结
 
 ## 严格模式（‘use strict’）
@@ -12,14 +16,14 @@
 
 ## js实现继承 
 * 原型链继承  
-function Parent() {}
-function Child() {}
-Child.prototype = new Parent()  缺点：子类区别于父类的属性和方法要在Sub.prototype = new Base();这样的语句之后分别执行，无法被包装到Sub这个构造器里面去；优点：实例既是父类的实例又是子类的实例
+  function Parent() {}
+  function Child() {}
+  Child.prototype = new Parent()  缺点：子类区别于父类的属性和方法要在Sub.prototype = new Base();这样的语句之后分别执行，无法被包装到Sub这个构造器里面去；优点：实例既是父类的实例又是子类的实例
 * 原型继承
-Child.prototype = Parent.prototype
-Child.prototype.constructor = Child 缺点：在子类原型对象中拓展一些属性的话，父类原型对象也会被修改
+  Child.prototype = Parent.prototype
+  Child.prototype.constructor = Child 缺点：在子类原型对象中拓展一些属性的话，父类原型对象也会被修改
 * 实例继承
-var Base = function()  
+  var Base = function()  
     {  
         this.level = 1;  
         this.name = "base";  
@@ -27,13 +31,13 @@ var Base = function()
             return "base";  
         };  
     };  
-Base.CONSTANT = "constant";  
-var Sub = function()  
-{  
+  Base.CONSTANT = "constant";  
+  var Sub = function()  
+  {  
     var instance = new Base();  
     instance.name = "sub";  
     return instance;  
-};
+  };
 
 ## 深拷贝
     function clone(src) {
@@ -62,14 +66,31 @@ var Sub = function()
 
 ## promise
     promise的三个阶段：Fulfilled（成功），Rejected（失败），Pending（创建阶段）
+## promise的缺点
+
+
 
 ## call,apply,bind的异同点，不支持bind的情况下如何写polyfill    
 
 ## Event loop
-    
+
 ## 跨域解决方案
 
 ## jsonp实现原理
+
+## 数组去重（如果使用object，无法判断类型怎么办 例如1和‘1’）
+
+## 使用reduce实现map
+
+## map和forEach的区别
+
+## for in for of的区别
+
+
+
+
+
+
 
 # ES6
 
@@ -109,7 +130,18 @@ var Sub = function()
     * XSS：跨站脚本攻击
     * CSRF：跨站请求伪造
 
+## http请求数量限制，同域及不同域
+
+## http请求资源放在不同域下的好处
+
+## 上一个问题导致的问题以及如何解决
+
+## js异步加载 async defer区别
+
+
+
 # React－Redux
+
     * connect方法实际接受四个参数，mapStateToProps和mapDispatchToProps，mergeProps，options选项。他们定义了UI组件的逻辑。mapStateToProps 负责 state 映射到 UI 组件的参数 props，mapDispatchToProps 负责用户对 UI 组件的操作映射成 Action。
     * mapStateToProps是一个函数，用于建立一个从（外部的）state 对象到（UI组件的）props对象的映射关系。mapStateToProps会订阅 Store，每当 state 更新的时候，会自动执行，重新计算 UI 组件的参数，从而触发 UI 组件的重新渲染。如果省略这个函数，UI组件就不会订阅store，store的更新也就不会引起UI组件的更新。
     * mapDispatchToProps 将 action 作为 props 绑定到组件上
@@ -120,7 +152,16 @@ var Sub = function()
     * componentWillReceiveProps ---> shouldComponentUpdate ----> componentWillUpdate ----> render -----> componentDidUpdate
     * componentWillUnmount
 
+## reactsetState的第二个参数的作用，发生在什么生命周期
+
+## 受控组件，非受控组件
+
+## ref的最新写法
+
+## shouldComponentUpdate如何使用
+
 # VUE 总结
+
 ## 生命周期
     beforecreate（初始化事件）---> created（完成数据观测，属性和方法的计算，watch／event事件回调）---> beforeMounted（render首次被调用）---> mounted (el被创建的vm.$el替换，并挂载到实例上去后调用，并不会保证所有子组件都会被挂载，如果希望整个视图都渲染完毕，可以使用vm.$nextTick替换mounted)---> beforeUpdate(数据更新时调用，发生在虚拟dom重新渲染和打补丁之前，可以在这个钩子函数中进一步更改状态，不会触发附加的重渲染过程) ---> updated（由于数据更改导致的虚拟dom重新渲染，会调用该函数，当这个函数被调用时，组件dom已经更新，所以可以执行依赖于dom的操作。在大多数情况下应该避免在此期间更改状态，可以通过计算属性和watcher取代）---> activated（keep－alive激活时调用）---> deactivate（keep－alive组件停用时调用）---> beforeDestroy（实例销毁之前调用，在这一步，实例仍然完全可用）---> destroyed（实例销毁之后调用，调用后，vue实例所指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁）
 ## 双向绑定实现原理
@@ -214,7 +255,30 @@ var Sub = function()
 
 ## 网络状态码
 
+## http请求头组成
+
+
+
 # jQuery
 ## 原生实现Ajax请求
 
 ## jQuery自定义拓展
+
+
+
+# 情境题
+
+## 获取页面的所有标签，并判断有多少种标签
+
+## 给页面中插入100行li，如何插入比较好
+
+# 模块化
+
+## cmd amd es6 node模块化比较
+
+# js
+
+## 垃圾回收机制
+
+## c和js数组存储的不同
+
