@@ -285,3 +285,12 @@
 ## c和js数组存储的不同
     js数组是在内存中存放引用，也就是数组的在堆中的内存地址
     c语言数组是在内存中一块连续的地址中存放，大小固定，在内存中是连续的
+
+
+# node
+## node 新建子进程的方式
+1.exec新建子进程，接受一个命令字符串：var exec = require('child_process').exec;
+2.execSync新建子进程，第一个参数是所要执行的命令，第二个参数用来配置执行环境 var execSync = require("child_process").execSync;
+3.execFile新建子进程，方法直接执行特定的程序，参数作为数组传入，不会被bash解释，因此具有较高的安全性
+4.spawn新建一个子进程来执行特定命令，用法与xecFile方法类似
+5.fork直接创建一个子进程，执行node脚本。fork会在父进程与子进程之间建立一个通讯管道，用于进程间通信
