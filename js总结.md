@@ -39,30 +39,7 @@
     return instance;  
   };
 
-## 深拷贝
-    function clone(src) {
-        if (typeof src !== 'object') {
-            return src
-        }
-        var dest = {};
-        for (var name in src) {
-            if(src［name］ === src) continue;
-            if (typeof src[name] === "object" && src[name] !== null) {
-                if (Array.isArray(src[name])) {
-                    dest[name] = [];
-                    for (var i = 0; i < src[name].length; i++) {
-                        dest[name].push(clone(src[name][i]));
-                    }
-                } else {
-                    dest[name] = clone(src[name]);
-                }
-            } else {
-                dest[name] = src[name];
-            }
-        }
-        return dest;
-     
-    };
+
 
 ## promise
     promise的三个阶段：Fulfilled（成功），Rejected（失败），Pending（创建阶段）
@@ -71,7 +48,6 @@
     2.必须设置回调函数，不设置回调函数内部会抛出错误
     3.pending状态，也就是执行状态中无法追踪，不能得知目前进展到哪个阶段
 
-
 ## call,apply,bind的异同点，不支持bind的情况下如何写polyfill    
 
 ## Event loop
@@ -79,7 +55,7 @@
 ## 跨域解决方案
 
 ## jsonp实现原理
-
+利用script的src属性来实现跨域，将前端方法作为参数传递到服务器，，然后由服务器注入参数后返回，只支持get方法
 
 ## 使用reduce实现map
 
@@ -87,12 +63,7 @@
     map不改变原数组返回新的数组
     forEach不改变原数组，无返回值
 ## for in for of的区别
-
-
-
-
-
-
+for－in遍历的对象的属性键值，for－of遍历的对象的元素
 
 # ES6
 
@@ -111,7 +82,10 @@
     matrix(): 所有的2D转换方法集合，包含数学函数，允许您：旋转、缩放、移动以及倾斜元素   
 
 ## 不定宽高元素的垂直水平居中
-
+    transform：translate（－50%，－50%）；
+    position：absolute；
+    top：50%；
+    left：50％；
 # HTML 
 ## cookie,seesionStorage,LocalStorage区别
     cookie：默认是关闭浏览器后失效，由服务器生成，可设置失效时间（_cookie的清除：手动设置cookie的键值对后面的expires为当前时间_）
@@ -139,7 +113,8 @@
 ## 上一个问题导致的问题以及如何解决
 
 ## js异步加载 async defer区别
-
+async异步记载并执行
+defer异步加载，最后执行
 
 
 # React－Redux
