@@ -109,7 +109,10 @@ for－in遍历的对象的属性键值，for－of遍历的对象的元素
 ## http请求数量限制，同域及不同域
 
 ## http请求资源放在不同域下的好处
-
+1.CDN缓存更方便
+2.突破浏览器的并发限制
+3.cookieless节省带宽，同时产生安全隔离，防止窃取cookie
+4.
 ## 上一个问题导致的问题以及如何解决
 
 ## js异步加载 async defer区别
@@ -129,7 +132,7 @@ defer异步加载，最后执行
     * componentWillReceiveProps ---> shouldComponentUpdate ----> componentWillUpdate ----> render -----> componentDidUpdate
     * componentWillUnmount
 
-## reactsetState的第二个参数的作用，发生在什么生命周期
+## react setState的第二个参数的作用，发生在什么生命周期
 
 ## 受控组件，非受控组件
 
