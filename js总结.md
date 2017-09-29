@@ -1,7 +1,5 @@
 [TOC]
 
-
-
 # JS总结
 
 ## 严格模式（‘use strict’）
