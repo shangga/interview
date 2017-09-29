@@ -28,11 +28,11 @@
         this.level = 1;  
         this.name = "base";  
         this.toString = function(){  
-            return "base";  
-        };  
-    };  
-  Base.CONSTANT = "constant";  
-  var Sub = function()  
+            return "base";
+        };
+    };
+  Base.CONSTANT = "constant";
+  var Sub = function()
   {  
     var instance = new Base();  
     instance.name = "sub";  
@@ -65,6 +65,8 @@
 ## for in for of的区别
 for－in遍历的对象的属性键值，for－of遍历的对象的元素
 
+## call 为什么比apply要快
+call 方法的参数格式正是内部方法所需要的格式
 # ES6
 
 ## 箭头函数的优点
