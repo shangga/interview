@@ -69,6 +69,17 @@ call 方法的参数格式正是内部方法所需要的格式
 
 ## 箭头函数的优点
     this指针的指向问题
+
+## genertor的返回值
+## 那些对象或者数据类型中有iterator及其实现
+## 顺序发送多个请求使用generator
+## function的scope属性
+## 箭头函数如何获取参数，什么时候不能使用箭头函数
+## object和map的区别
+## cookie和session的区别
+## ES6中object的新方法
+## new的时候发生了什么？函数中的this是什么时候绑定的？如果在构造函数中加入return会怎么样？
+## 实现简单的jquery链式调用
 # CSS总结
 ## flex与传统布局的差异 
     传统的布局是基于css盒模型，依赖display＋position＋float等属性
