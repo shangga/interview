@@ -96,8 +96,11 @@ this的指向是由函数定义的位置决定，而不是在使用它的地方�
     对象的键值只能是string或者symbol，但是map的键可以是任意值
     可以通过size很容易确定map中含有键值对的个数
 ## cookie和session的区别
-
+session是在服务端保存的一种数据结构，用来跟踪用户的状态，这个数据可以保存在集群、数据库，文件中
+cookie是客户端保存用户信息的一种机制，用来记录一些用户信息，也是实现session的一种方式
+session是依赖于session if，但是session id 是存储在cookie中的，如果浏览器禁止了cookie，那么session也会失效
 ## ES6中object的新方法
+object.assign对象合并  object.is判断两个对象是否相等  Object.setPrototypeOf()，Object.getPrototypeOf()用于设置和读取一个对象的prototype属性
 ## new的时候发生了什么？函数中的this是什么时候绑定的？如果在构造函数中加入return会怎么样？
 ## 实现简单的jquery链式调用
 
