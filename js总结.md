@@ -47,7 +47,11 @@
     3.pending状态，也就是执行状态中无法追踪，不能得知目前进展到哪个阶段
 
 ## call,apply,bind的异同点，不支持bind的情况下如何写polyfill    
-
+三者都是用来改变this指向的
+call和apply是对函数进行直接调用，bind方法的返回值仍然是一个函数，需要加括号才能进行调用
+```
+    xw.say.call(xh);   xw.say.apply(xh); xw.say.bind(xh)()
+```
 ## Event loop
 
 ## 跨域解决方案
