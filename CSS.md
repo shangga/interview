@@ -14,4 +14,9 @@
     transform：translate（－50%，－50%）；
     position：absolute；
     top：50%；
-    left：50％；
+    left：50％
+
+## 判断横竖屏
+使用媒体查询和orientation实现
+    @media screen and (orientation: portrait) // 竖屏
+    @media screen and (orientation: landscape) // 横屏
