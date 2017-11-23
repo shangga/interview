@@ -18,8 +18,10 @@
 ## shouldComponentUpdate如何使用
 
 ## React 15 vs 16
-
-
+    新增了render的返回类型，可以直接返回string、number、boolean、null、、portal以及fragments
+    使用error boundary处理错误组件
+    支持自定义dom属性
+    setstate传入null时不会触发更新
 # VUE 总结
 
 ## 生命周期
