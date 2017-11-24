@@ -71,7 +71,7 @@ for－in遍历的对象的属性键值，for－of遍历的对象的元素
 call 方法的参数格式正是内部方法所需要的格式
 
 ## currentTarget vs target
-target 是鼠标点击的目标，触发事件的某个对象；currentTarget是当前事件活动的对象，绑定事件的对象
+target 触发事件的某个对象；currentTarget，绑定事件的对象
 
 ## 
 # ES6
@@ -106,7 +106,7 @@ session是依赖于session if，但是session id 是存储在cookie中的，如�
 ## ES6中object的新方法
 object.assign对象合并  object.is判断两个对象是否相等  Object.setPrototypeOf()，Object.getPrototypeOf()用于设置和读取一个对象的prototype属性
 ## new的时候发生了什么？函数中的this是什么时候绑定的？如果在构造函数中加入return会怎么样？
-
+    
 ## 实现简单的jquery链式调用
 
 # HTML 
