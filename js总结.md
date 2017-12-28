@@ -98,7 +98,7 @@ array，object，map，set数据中都会存在iterator，iterator的本质是�
         next: function() {
         return nextIndex < array.length ?
             {value: array[nextIndex++], done: false} :
-            {value: undefined, done: true};
+            {done: true};
         }
     };
     }
@@ -153,7 +153,7 @@ object.assign对象合并  object.is判断两个对象是否相等  Object.setPr
 1.CDN缓存更方便
 2.突破浏览器的并发限制
 3.cookieless节省带宽，同时产生安全隔离，防止窃取cookie
-4.
+
 ## 上一个问题导致的问题以及如何解决
 
 ## js异步加载 async defer区别
@@ -177,7 +177,7 @@ defer异步加载，最后执行
 
 
 # js编程题目
-## 数组随机顺序排序
+
 ## 深拷贝
 ## 对象继承
 
