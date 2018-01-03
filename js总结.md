@@ -136,7 +136,6 @@ this 的指向是由函数定义的位置决定，而不是在使用它的地方
 array，object，map，set 数据中都会存在 iterator，iterator 的本质是一个指针对象
 
 > iterator 的实现过程 ：
->
 > > 1.创建一个指针对象，指向当前数据结构的起始位置。也就是说，遍历器对象本质上就是一个指针对象 2.第一次调用指针对象的 next 方法，可以将指针指向数据结构的第二个成员 3.第二次调用指针对象的 next 方法，指针就指向数据结构的第二个成员 4.不断调用指针对象的 next 方法，直到它指向数据结构的结束位置
 
 ```js
@@ -181,7 +180,20 @@ object.assign 对象合并 object.is 判断两个对象是否相等 Object.setPr
 ## 实现简单的 jquery 链式调用
 
 ## 清除cookie
+直接通过document.cookie可以操作cookie，通过设置相同的名字和一个过期时间来覆盖cookie
+注意事项：在删除cookie时需要设置path和domain才能准确覆盖cookie
+```js
+    function deleteAllCookies() {
+    var cookies = document.cookie.split(";");
 
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        var eqPos = cookie.indexOf("=");
+        var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;Path=/;Domain=stackoverflow.com;";
+    }
+}
+```
 # HTML
 
 ## cookie,seesionStorage,LocalStorage 区别
@@ -213,7 +225,7 @@ object.assign 对象合并 object.is 判断两个对象是否相等 Object.setPr
 ## http 请求资源放在不同域下的好处
 
 1.CDN 缓存更方便 2.突破浏览器的并发限制
-3.cookieless 节省带宽，同时产生安全隔离，防止窃取 cookie
+3.cookieless 节省带宽，同时产生安全隔离，防止窃取cookie
 
 ## 上一个问题导致的问题以及如何解决
 
@@ -242,7 +254,6 @@ defer 异步加载，最后执行
 
 # js 编程题目
 
-## 深拷贝
 
 ## 对象继承
 
